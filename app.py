@@ -3,8 +3,14 @@ import pandas as pd
 from google.cloud import bigquery
 import matplotlib.pyplot as plt
 
+# Access the secret
+gcp_credentials = st.secrets["GOOGLE_APPLICATION_CREDENTIALS"]
+
+# Set the environment variable for Google Cloud authentication
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = gcp_credentials
+
 # Initialize BigQuery client
-bq_client = bigquery.Client(project="jumpfree")
+bq_client = bigquery.Client()
 
 # Streamlit App Title
 st.title("🪂 Skydiving Weather Dashboard")
