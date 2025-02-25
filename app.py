@@ -30,7 +30,7 @@ except Exception as e:
 def fetch_data():
     query = """
     SELECT timestamp, temperature_category, overall_grade
-    FROM `your_project_id.weather_dataset.weather_data`
+    FROM `jumpfree.weather_dataset.weather_data`
     LIMIT 10
     """
     query_job = bq_client.query(query)
